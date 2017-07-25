@@ -1,10 +1,14 @@
 <form action="/" method="post">
     <label for="task">Enter a Task:</label>
-    <input type="text" id="task" name="task" required placeholder="Eg: Get Eggs!">
+    <input type="text" id="task" name="title" required placeholder="Eg: Get Eggs!">
     <input type="submit" value="Add Task">
 </form>
 
 <h1>All Tasks!</h1>
 <ul>
-
+    <% @tasks.each do |task| %>
+    <li>
+        <%= task.title %>
+    </li>
+    <% end %>
 </ul>
