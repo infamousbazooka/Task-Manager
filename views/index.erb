@@ -18,10 +18,16 @@
                 <% @tasks.each do |task| %>
                 <li class="list-group-item">
                     <h5><%= task.title %></h5>
-                    <form action="/update" method="post">
-                        <button type="submit" class="btn btn-warning"><b>UPDATE</b></button>
-                    </form>
-                    <form action="/delete" method="post">
+
+                    <% if task.completed %>
+                        <h4><span class="badge badge-success">COMPLETED!</span></h4>
+                    <% else %>
+                        <form action="/update/<%= task.id %>" method="post">
+                            <button type="submit" class="btn btn-warning"><b>COMPLETED THIS?</b></button>
+                        </form>
+                    <% end %>
+
+                    <form action="/delete/<%= task.id %>" method="post">
                         <button type="submit" class="btn btn-danger"><b>DELETE</b></button>
                     </form>
                 </li>
