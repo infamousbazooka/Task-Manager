@@ -12,9 +12,16 @@ get '/' do
 end
 
 post '/' do
-    # @task = Task.new(params[:title])
-    # @task.save
-    # Task.create params[:title]
+    Task.create(:title => params[:title])
+    redirect "/"
+end
+
+post '/update' do
+    Task.create(:title => params[:title])
+    redirect "/"
+end
+
+post '/delete' do
     Task.create(:title => params[:title])
     redirect "/"
 end

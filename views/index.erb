@@ -1,14 +1,32 @@
-<form action="/" method="post">
-    <label for="task">Enter a Task:</label>
-    <input type="text" id="task" name="title" required placeholder="Eg: Get Eggs!">
-    <input type="submit" value="Add Task">
-</form>
+<div class="jumbotron">
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="task">Enter a Task:</label>
+            <input type="text" id="task" class="form-control" name="title" required placeholder="Eg: Get Eggs!">
+        </div>
+        <button type="submit" class="btn btn-primary"><b>ADD TASK</b></button>
+    </form>
+</div>
 
-<h1>All Tasks!</h1>
-<ul>
-    <% @tasks.each do |task| %>
-    <li>
-        <%= task.title %>
-    </li>
-    <% end %>
-</ul>
+
+
+<div class="jumbotron all">
+    <h1>All Tasks!</h1>
+    <div class="row">
+        <div class="col-8">
+            <ul class="list-group">
+                <% @tasks.each do |task| %>
+                <li class="list-group-item">
+                    <h5><%= task.title %></h5>
+                    <form action="/update" method="post">
+                        <button type="submit" class="btn btn-warning"><b>UPDATE</b></button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <button type="submit" class="btn btn-danger"><b>DELETE</b></button>
+                    </form>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

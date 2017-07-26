@@ -1,12 +1,15 @@
 <html>
     <head>
         <title>Task Manager - Sinatra</title>
+        <link rel="stylesheet" href="/stylesheets/lib/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <body>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Me</a></li>
-        </ul>
-        <%= yield %>
+        <div class="container-fluid">
+            <%= yield %>
+        </div>
+        <script src="/javascripts/lib/jquery.min.js" charset="utf-8"></script>
+        <script src="/javascripts/lib/tether.min.js" charset="utf-8"></script>
+        <script src="/javascripts/lib/bootstrap.min.js" charset="utf-8"></script>
     </body>
 </html>
